@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/p1maf/task-service/internal/database"
 	"github.com/p1maf/task-service/internal/task"
 	transportgrpc "github.com/p1maf/task-service/internal/transport/grpc"
@@ -14,4 +15,5 @@ func main() {
 	if err := transportgrpc.RunGRPC(service, userClient); err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println("server started")
 }
